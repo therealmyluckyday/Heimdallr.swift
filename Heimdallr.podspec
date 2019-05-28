@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name = 'Heimdallr'
-  spec.version = '3.6.1'
+  spec.version = '3.7.0'
   spec.authors = {
     'trivago' => 'info@trivago.de'
   }
@@ -11,21 +11,20 @@ Pod::Spec.new do |spec|
   }
   spec.homepage = 'https://github.com/trivago/Heimdallr.swift'
   spec.source = {
-    :git => 'https://github.com/trivago/Heimdallr.swift.git',
+    :git => 'https://github.com/therealmyluckyday/Heimdallr.swift.git',
     :tag => spec.version.to_s
   }
   spec.summary = 'Easy to use OAuth 2 library, written in Swift'
   spec.description = 'Heimdallr is an OAuth 2.0 client specifically designed for easy usage. It currently supports the resource owner password credentials grant flow, refreshing an access token as well as extension grants.'
 
-  spec.ios.deployment_target = '9.0'
+  spec.ios.deployment_target = '10.0'
   spec.osx.deployment_target = '10.9'
 
   spec.default_subspec = 'Core'
-
+  spec.swift_version = '5.0'
   spec.subspec 'Core' do |subspec|
-    subspec.dependency 'Result', '~> 3.0'
+    subspec.dependency 'Result', '~> 4.0'
     subspec.framework = 'Foundation'
-
-    subspec.source_files = 'Heimdallr/Core/*.swift'
+    subspec.source_files = 'Heimdallr/*.swift'
   end
 end
